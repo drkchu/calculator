@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Derek's Calculator</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <section></section>
+    <div class="calculator-container">
+      <div class="calculator">
+        <div class="calculator-display">
+          <output class="user-input" id="user-input">0</output>
+          <output class="result" type="text" id="result">&nbsp;</output>
+        </div>
+        <div class="all-buttons">
+          <div class="row">
+            <button class="all-clear">AC</button>
+            <button class="clear">C</button>
+            <button class="operator" id="percent">%</button>
+            <button class="operator" id="divide">÷</button>
+          </div>
+          <div class="row">
+            <button class="digit" id="7">7</button>
+            <button class="digit" id="8">8</button>
+            <button class="digit" id="9">9</button>
+            <button class="operator" id="multiply">x</button>
+          </div>
+          <div class="row">
+            <button class="digit" id="4">4</button>
+            <button class="digit" id="5">5</button>
+            <button class="digit" id="6">6</button>
+            <button class="operator" id="subtract">-</button>
+          </div>
+          <div class="row">
+            <button class="digit" id="1">1</button>
+            <button class="digit" id="2">2</button>
+            <button class="digit" id="3">3</button>
+            <button class="operator" id="add">+</button>
+          </div>
+          <div class="row">
+            <div class="bottom-left-buttons">
+              <button class="digit" id="0">0</button>
+              <button class="decimal">.</button>
+            </div>
+            <button class="equals">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Derek Chu &copy; <script>document.write( new Date().getFullYear() );</script></p>
+    </footer>
+  </body>
 </html>

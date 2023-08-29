@@ -1,8 +1,121 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-    background-color: #cccccc;
-    min-height: 100vh;
-  }
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #cccccc;
+  min-height: 100%;
+  display: flex;
+  justify-content: center; /* Center calculator horizontally */
+  align-items: center; /* Center calculator vertically */
+}
+
+.calculator-container {
+  width: 28%;
+  position: relative;
+  padding-top: 45%;
+  margin-top: 2%;
+}
+
+.calculator {
+  position: absolute;
+  border-radius: 35px;
+  padding: 5%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333333;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.calculator-display {
+  display: flex;
+  flex: 1;
+  padding: 3%;
+  border-radius: 20px;
+  flex-direction: column;
+  text-align: right;
+  border: 2px solid black;
+  background-color: #666666;
+  margin-top: 5%;
+}
+
+.all-buttons {
+  display: flex;
+  flex: 6;
+  flex-direction: column;
+  margin-top: 12%;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+}
+
+.bottom-left-buttons {
+    display: flex;
+    flex: 1;
+}
+
+button {
+  flex: 1;
+  border-radius: 50%;
+  background-color: #999999;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin: 4px;
+}
+
+button.equals {
+    flex: 1;
+    border-radius: 25px;
+    background-color: #999999;
+    color: #ffffff;
+    border: none;
+    cursor: pointer; 
+}
+
+button.equals:hover {
+	background: lightgreen;
+	color: black;
+	transform: translateY(-0.2rem);
+}
+
+button.digit:hover,
+button.decimal:hover {
+	background: #bdbdbd;
+	color: black;
+	transform: translateY(-0.2rem);
+}
+
+button.operator:hover {
+	background: lightskyblue;
+	color: black;
+	transform: translateY(-0.2rem);
+}
+
+button.all-clear:hover,
+button.clear:hover {
+	background: lightcoral;
+	color: black;
+	transform: translateY(-0.2rem);
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
