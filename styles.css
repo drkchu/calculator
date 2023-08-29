@@ -86,27 +86,36 @@ button.equals {
 button.equals:hover {
 	background: lightgreen;
 	color: black;
-	transform: translateY(-0.2rem);
+	transform: translateY(-0.3rem);
 }
 
 button.digit:hover,
 button.decimal:hover {
 	background: #bdbdbd;
 	color: black;
-	transform: translateY(-0.2rem);
+	transform: translateY(-0.3rem);
 }
 
 button.operator:hover {
 	background: lightskyblue;
 	color: black;
-	transform: translateY(-0.2rem);
+	transform: translateY(-0.3rem);
 }
 
 button.all-clear:hover,
 button.clear:hover {
 	background: lightcoral;
 	color: black;
-	transform: translateY(-0.2rem);
+	transform: translateY(-0.3rem);
+}
+
+button.digit:active,
+button.decimal:active,
+button.operator:active,
+button.all-clear:active,
+button.clear:active,
+button.equals:active {
+	transform: translateY(0rem);
 }
 
 .footer {
