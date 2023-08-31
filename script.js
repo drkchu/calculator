@@ -1,4 +1,5 @@
-let operand0, operand1, operator;
+let [operand0, operand1, operator] = ['', '', ''];
+let user_input = document.querySelector('.user-input');
 
 function add(x, y) {
     return x + y;
@@ -28,3 +29,20 @@ function operate(operator, x, y) {
             return divide(x, y);
     }
 }
+
+function initializeDigits() {
+    // access all buttons
+    let buttons = Array.from(document.querySelectorAll('.digit'));
+    buttons.forEach(button => {
+        button.addEventListener('click', event => { // pass in a ref to a fn
+            operand0 += event.target.textContent;
+            updateDisplay();
+        });
+    });
+}
+
+function updateDisplay() {
+    user_input.textContent = `${operand0} ${operator} ${operand1}`;
+}
+
+initializeDigits();

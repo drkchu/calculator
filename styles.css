@@ -50,8 +50,12 @@ body {
   background-color: #666666;
   margin-top: 5%;
   font-weight: bold;
-  font-size: 2vw;
   overflow: auto;
+}
+
+.user-input {
+  font-size: 1.5vw;
+  color: darkgray;
 }
 
 .all-buttons {
