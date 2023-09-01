@@ -58,6 +58,11 @@ body {
   color: darkgray;
 }
 
+.result {
+  font-size: 2vw;
+  color: #20c20e;
+}
+
 .all-buttons {
   display: flex;
   flex: 6;
