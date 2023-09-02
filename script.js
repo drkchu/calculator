@@ -65,8 +65,10 @@ function initializeOperators() {
     let buttons = Array.from(document.querySelectorAll('.operator'));    
     buttons.forEach(button => {
         button.addEventListener('click', event => {
-            operator = event.target.textContent;
-            updateDisplay();
+            if (operand0) {
+                operator = event.target.textContent;
+                updateDisplay();
+            }
         });
     });
 }
