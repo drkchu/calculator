@@ -1,26 +1,26 @@
 let [operand0, operand1, operator] = ['', '', ''];
 let user_input = document.querySelector('.user-input');
 let result = document.querySelector('.result');
-const DIGITS_TO_ROUND = 5
+const DIGITS_TO_ROUND = 5;
 
 function add(x, y) {
-    return (isNaN(y)) ? 'ERROR' : (x + y).toFixed(toFixed(DIGITS_TO_ROUND));
+    return (isNaN(y)) ? 'ERROR' : roundResult(x + y);
 }
 
 function subtract(x, y) {
-    return (isNaN(y)) ? 'ERROR' : (x - y).toFixed(DIGITS_TO_ROUND);
+    return (isNaN(y)) ? 'ERROR' : roundResult(x - y);
 }
 
 function multiply(x, y) {
-    return (isNaN(y)) ? 'ERROR' : (x * y).toFixed(DIGITS_TO_ROUND);
+    return (isNaN(y)) ? 'ERROR' : roundResult(x * y);
 }
 
 function divide(x, y) {
-    return (isNaN(y)) ? 'ERROR' : (y ? (x / y).toFixed(DIGITS_TO_ROUND) : 'UNDEFINED');
+    return (isNaN(y)) ? 'ERROR' : (y ? roundResult(x / y) : 'UNDEFINED');
 }
 
 function modulus(x, y) {
-    return (isNaN(y)) ? 'ERROR' : (y ? (x % y).toFixed(DIGITS_TO_ROUND) : 'UNDEFINED');
+    return (isNaN(y)) ? 'ERROR' : (y ? roundResult(x % y) : 'UNDEFINED');
 }
 
 function operate(operator, x, y) {
@@ -113,6 +113,10 @@ function initializeClears() {
         updateDisplay();
     });
 }
+
+function roundResult(num) {
+    return Math.round(num * (10 ** DIGITS_TO_ROUND)) / (10 ** DIGITS_TO_ROUND);
+  }
 
 initializeDigits();
 initializeOperators();
