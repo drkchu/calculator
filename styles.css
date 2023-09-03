@@ -92,6 +92,8 @@ button {
   font-weight: bold;
   font-size: 2vw;
   font-family: 'Montserrat', sans-serif;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  border: 2px solid black;
 }
 
 button.equals {

@@ -122,3 +122,16 @@ initializeDigits();
 initializeOperators();
 initializeClears();
 initializeEquals();
+
+
+// window.addEventListener('keydown', handleKeyboardInput)
+
+// function handleKeyboardInput(e) {
+//     if (e.key >= 0 && e.key <= 9) appendNumber(e.key) // just make this a button press
+//     if (e.key === '.') appendPoint()
+//     if (e.key === '=' || e.key === 'Enter') evaluate()
+//     if (e.key === 'Backspace') deleteNumber()
+//     if (e.key === 'Escape') clear()
+//     if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/')
+//       setOperation(convertOperator(e.key))
+//   }
