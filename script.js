@@ -1,25 +1,26 @@
 let [operand0, operand1, operator] = ['', '', ''];
 let user_input = document.querySelector('.user-input');
 let result = document.querySelector('.result');
+const DIGITS_TO_ROUND = 5
 
 function add(x, y) {
-    return x + y;
+    return (isNaN(y)) ? 'ERROR' : (x + y).toFixed(toFixed(DIGITS_TO_ROUND));
 }
 
 function subtract(x, y) {
-    return x - y;
+    return (isNaN(y)) ? 'ERROR' : (x - y).toFixed(DIGITS_TO_ROUND);
 }
 
 function multiply(x, y) {
-    return x * y;
+    return (isNaN(y)) ? 'ERROR' : (x * y).toFixed(DIGITS_TO_ROUND);
 }
 
 function divide(x, y) {
-    return y ? x / y : 'UNDEFINED';
+    return (isNaN(y)) ? 'ERROR' : (y ? (x / y).toFixed(DIGITS_TO_ROUND) : 'UNDEFINED');
 }
 
 function modulus(x, y) {
-    return x % y;
+    return (isNaN(y)) ? 'ERROR' : (y ? (x % y).toFixed(DIGITS_TO_ROUND) : 'UNDEFINED');
 }
 
 function operate(operator, x, y) {
@@ -81,8 +82,10 @@ function initializeEquals() {
     let equalsButton = Array.from(document.querySelectorAll('.equals'));    
     equalsButton.forEach(button => {
         button.addEventListener('click', event => {
-            result.textContent = operate(operator, +operand0, +operand1);
-            updateDisplay();
+            if (operand1) {
+                result.textContent = operate(operator, +operand0, +operand1);
+                updateDisplay();
+            }
         });
     });
 }
@@ -95,11 +98,9 @@ function initializeClears() {
         if (operand1) {
             operand1 = operand1.slice(0, operand1.length - 1);
             updateDisplay();
-            console.log('helo')
         } else if (operator) {
             operator = operator.slice(0, operator.length - 1);
-            updateDisplay();
-            console.log('helo2')   
+            updateDisplay();  
         } else if (operand0) {
             operand0 = operand0.slice(0, operand0.length - 1);
             updateDisplay();
@@ -108,6 +109,7 @@ function initializeClears() {
 
     buttonAllClear.addEventListener('click', event => {
         [operand0, operand1, operator] = ['', '', ''];
+        result.textContent = '';
         updateDisplay();
     });
 }

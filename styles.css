@@ -14,6 +14,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, #292b2c, #1c1e1f);
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .calculator-container {
