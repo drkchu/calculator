@@ -1,5 +1,6 @@
-let [operand0, operand1, operator, result] = ['', '', '', ''];
+let [operand0, operand1, operator] = ['', '', ''];
 let user_input = document.querySelector('.user-input');
+let result = document.querySelector('.result');
 
 function add(x, y) {
     return x + y;
@@ -33,6 +34,8 @@ function operate(operator, x, y) {
             return divide(x, y);
         case '%':
             return modulus(x, y);
+        default:
+            return x;
     }
 }
 
@@ -59,9 +62,10 @@ function updateDisplay() {
     } else {
         user_input.textContent = '\u00A0';
     }
+
 }
 
-function initializeOperators() {
+function initializeOperators() { // add operate functionality
     let buttons = Array.from(document.querySelectorAll('.operator'));    
     buttons.forEach(button => {
         button.addEventListener('click', event => {
@@ -69,6 +73,16 @@ function initializeOperators() {
                 operator = event.target.textContent;
                 updateDisplay();
             }
+        });
+    });
+}
+
+function initializeEquals() {
+    let equalsButton = Array.from(document.querySelectorAll('.equals'));    
+    equalsButton.forEach(button => {
+        button.addEventListener('click', event => {
+            result.textContent = operate(operator, +operand0, +operand1);
+            updateDisplay();
         });
     });
 }
@@ -101,3 +115,4 @@ function initializeClears() {
 initializeDigits();
 initializeOperators();
 initializeClears();
+initializeEquals();
