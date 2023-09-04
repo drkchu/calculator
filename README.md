@@ -17,7 +17,7 @@ Press the buttons as you would a regular calculator to compute
 
 Alternatively, use keyboard inputs to operate the calculator
 * A `digit` (0 through 9) to compute
-* `+`, `-`, `+`, or `/` to select the corresponding operation
+* `+`, `-`, `*`, or `/` to select the corresponding operation
 * `.` to add a decimal point
 * `=` or `Enter` to calculate
 * `Backspace` to go back a step
