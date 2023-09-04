@@ -1,6 +1,7 @@
 let [operand0, operand1, operator] = ["", "", ""];
 let user_input = document.querySelector(".user-input");
 let result = document.querySelector(".result");
+let equalsButton = document.getElementById("equals");
 const DIGITS_TO_ROUND = 5;
 
 function add(x, y) {
@@ -43,7 +44,7 @@ function operate(operator, x, y) {
 function initializeDigits() {
   let buttons = Array.from(document.querySelectorAll(".digit"));
   buttons.forEach((button) => {
-    button.addEventListener("click", (event) => {
+    button.addEventListener("click", event => {
       // pass in a ref to a fn
       if (!operand0 || !operator) {
         if (event.target.textContent === "." && operand0.includes(".")) return;
@@ -70,8 +71,14 @@ function initializeOperators() {
   // add operate functionality
   let buttons = Array.from(document.querySelectorAll(".operator"));
   buttons.forEach((button) => {
-    button.addEventListener("click", (event) => {
+    button.addEventListener("click", event => {
       if (operand0) {
+        if (operator) {
+            let answer = operate(operator, +operand0, +operand1);
+            operand0 = answer;
+            result.textContent = answer;
+            operand1 = '';
+        }
         operator = event.target.textContent;
         updateDisplay();
       }
@@ -80,14 +87,11 @@ function initializeOperators() {
 }
 
 function initializeEquals() {
-  let equalsButton = Array.from(document.querySelectorAll(".equals"));
-  equalsButton.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      if (operand1) {
-        result.textContent = operate(operator, +operand0, +operand1);
-        updateDisplay();
-      }
-    });
+  equalsButton.addEventListener("click", event => {
+    if (operand1) {
+      result.textContent = operate(operator, +operand0, +operand1);
+      updateDisplay();
+    }
   });
 }
 
@@ -95,7 +99,7 @@ function initializeClears() {
   let buttonClear = document.querySelector(".clear");
   let buttonAllClear = document.querySelector(".all-clear");
 
-  buttonClear.addEventListener("click", (event) => {
+  buttonClear.addEventListener("click", event => {
     if (operand1) {
       operand1 = operand1.slice(0, operand1.length - 1);
       updateDisplay();
@@ -139,6 +143,8 @@ window.addEventListener("keydown", (event) => {
     button = document.getElementById("multiply");
   } else if (event.key === "/") {
     button = document.getElementById("divide");
+  } else {
+    return
   }
   button.click();
 });
