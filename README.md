@@ -16,7 +16,7 @@ Fully functional on-screen calculator using JavaScript, HTML, and CSS (with buil
 Press the buttons as you would a regular calculator to compute  
 
 Alternatively, use keyboard inputs to operate the calculator
-* A `digit` (0 through 9) to compute
+* A `digit` (0 through 9) to create a number
 * `+`, `-`, `*`, or `/` to select the corresponding operation
 * `.` to add a decimal point
 * `=` or `Enter` to calculate
