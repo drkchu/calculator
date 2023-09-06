@@ -7,7 +7,7 @@ Fully functional on-screen calculator using JavaScript, HTML, and CSS (with buil
 * Solidify JavaScript fundamentals: DOM manipulation, event handling, debugging/testing
 
 <p align="center">
-  <img src="./calculator.png" />
+  <img style="border: 4px solid black" src="./calculator.png" />
 </p>
 
 [Live Demo](https://drkchu.github.io/calculator/)
