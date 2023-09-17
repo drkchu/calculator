@@ -20,5 +20,5 @@ Alternatively, use keyboard inputs to operate the calculator
 * `+`, `-`, `*`, or `/` to select the corresponding operation
 * `.` to add a decimal point
 * `=` or `Enter` to calculate
-* `Backspace` to go back a step
+* `Backspace` to delete a single value
 * `Escape` to clear the data
